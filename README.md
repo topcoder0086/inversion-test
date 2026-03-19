@@ -22,7 +22,7 @@ A professional family tree exploration application built with React, Django, and
 ### Setup & Run
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/topcoder0086/inversion-test.git
    cd inversion
    ```
 
