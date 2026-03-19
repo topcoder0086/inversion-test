@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #0b0e14;
+    --background: #0b0e14;
+    --accent: #0ea5e9;
+  }
+
+  html,
+  body {
+    @apply bg-[#0b0e14] text-slate-300 antialiased overflow-auto;
+    background-color: #0b0e14 !important;
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply tracking-tighter font-black text-white;
+  }
+}
+
+@layer components {
+  .sidebar-item {
+    @apply flex items-center gap-4 px-5 py-4 rounded-[1.5rem] text-slate-600 hover:text-white hover:bg-white/5 transition-all duration-500 grayscale hover:grayscale-0;
+  }
+
+  .sidebar-item-active {
+    @apply bg-white/10 text-white shadow-2xl shadow-black/60 grayscale-0 border border-white/5;
+  }
+}
+
+/* Cinematic UI Refinements */
+::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+* {
+  border-color: rgba(255, 255, 255, 0.08);
+  -webkit-user-drag: none;
+}
+
+/* Matrix Glow Effects */
+.node-glow {
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.1);
+}
