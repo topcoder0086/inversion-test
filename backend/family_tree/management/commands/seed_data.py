@@ -26,7 +26,10 @@ LAST_NAMES = [
 ]
 
 GENERATION_GAP_YEARS = 25
-TOTAL_GENERATIONS = 10
+# Increase depth so the tree has many levels to test scrolling.
+# With 20 generations and up to ~2 children per couple, this will
+# typically create on the order of 1–2 million Person records.
+TOTAL_GENERATIONS = 20
 
 
 # Utility Functions
@@ -204,7 +207,10 @@ class Command(BaseCommand):
             List of tuples: (child, spouse, updated_id_counter)
         """
         results = []
-        num_children = random.randint(2, 3)
+        # Keep children per couple relatively small (1–2) so that
+        # total record count is in the millions range but does not
+        # explode to an unmanageable size.
+        num_children = random.randint(1, 2)
 
         for _ in range(num_children):
             gender = random.choice(['male', 'female'])
